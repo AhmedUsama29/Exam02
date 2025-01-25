@@ -12,11 +12,6 @@ namespace Exam02
         {
         }
 
-        //public override void StartExam() { 
-        
-
-        
-        //}
 
         public override void ShowExam(Answer[] UserAnswers, TimeSpan elapsedTime)
         {

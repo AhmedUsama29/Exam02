@@ -15,13 +15,7 @@
             s01.CreateExam();
             Console.Clear();
 
-            s01.ExamOfSubject.ShowExam();
-            //s01.ExamOfSubject.ShowExam();
-
-            //foreach (Question Question in s01.ExamOfSubject.Questions)
-            //{
-            //    Console.WriteLine(Question);
-            //}
+            s01.ExamOfSubject.StartExam();
 
 
         }

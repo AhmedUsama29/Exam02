@@ -17,7 +17,7 @@ namespace Exam02
 
         public Answer[] Answers { get; set; }  //still
 
-        public string CorrectAnswer { get; set; } //still
+        public short CorrectAnswer { get; set; } //still
 
         
 
