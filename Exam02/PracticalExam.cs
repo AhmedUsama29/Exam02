@@ -16,7 +16,12 @@ namespace Exam02
         {
             Console.WriteLine("Practical Exam: ");
             Console.WriteLine($"Time of the Exam: {Time} minutes"); // change to hours and minutes later
-            Console.WriteLine($"Number of Questions: {NumOfQuestions}");
+            Console.WriteLine($"Number of Questions: {NumOfQuestions}\n");
+
+            foreach (Question question in Questions)
+            {
+                Console.WriteLine(question);
+            }
         }
     }
 }

@@ -41,6 +41,7 @@ namespace Exam02
                     Console.WriteLine($"Question {i + 1} : ");
 
                     short QuestionType = Helper.GetQuestionType();
+                    Console.Clear();
                     if (QuestionType == 1) // MCQ
                     {
                         ExamOfSubject.Questions[i] = Helper.GetMCQDetails();
@@ -52,11 +53,8 @@ namespace Exam02
                     }
                 }
 
-
-
             }
-
-
+            Console.WriteLine("Do you want to start the exam ? (Y|N)");
         }
     }
 }
