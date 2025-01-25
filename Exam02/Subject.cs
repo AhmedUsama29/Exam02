@@ -13,7 +13,35 @@ namespace Exam02
 
         public string SubjectName { get; set; }
 
-        public Exam ExamOfSubject { get; set; } // still
+        public Exam ExamOfSubject { get; set; }
+
+        public void CreateExam()
+        {
+
+            int examType = Helper.GetExamType();
+            short examTime = Helper.GetExamTime();
+            short numberOfQuestions = Helper.GetNumberOfQuestions();
+
+            if (examType == 1)
+            {
+                ExamOfSubject = new PracticalExam()
+                {
+                    Time = examTime,
+                    NumOfQuestions = numberOfQuestions
+                };
+            }
+            else
+            {
+                ExamOfSubject = new FinalExam()
+                {
+                    Time = examTime,
+                    NumOfQuestions = numberOfQuestions
+                };
+            }
+
+            
+        }
+
 
     }
 }
