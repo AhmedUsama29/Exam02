@@ -83,6 +83,8 @@ namespace Exam02
             string choice;
             Answer[] answers = new Answer[3];
 
+            Console.WriteLine("[Choices of the Question]");
+
             for (int i = 0; i < 3; i++)
             {
                 do
@@ -166,8 +168,15 @@ namespace Exam02
                 Answers = answers,
                 CorrectAnswer = CorrectAnswer
             };
-        } 
+        }
         #endregion
-    
+
+        public static short GetAnswerID() {
+
+         Console.WriteLine("Please Enter The Answer ID:");
+            //continue
+
+        }
+
     }
 }

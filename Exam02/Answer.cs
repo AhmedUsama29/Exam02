@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exam02
 {
-    internal class Answer
+    internal class Answer //: IComparable
     {
 
         public int AnswerID { get; set; }
