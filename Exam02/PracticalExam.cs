@@ -8,5 +8,13 @@ namespace Exam02
 {
     internal class PracticalExam : Exam
     {
+
+
+
+        public override void ShowExam()
+        {
+            Console.WriteLine("Practical Exam: ");
+            base.ShowExam();
+        }
     }
 }
