@@ -31,6 +31,8 @@ namespace Exam02
                 };
                 for (int i = 0; i < numberOfQuestions ; i++)
                 {
+                    Console.Clear();
+                    Console.WriteLine($"Question {i+1} : ");
                     Helper.GetMCQDetails();
                 }
             }

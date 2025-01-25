@@ -79,7 +79,7 @@ namespace Exam02
                 questionBody = Console.ReadLine();
             } while (string.IsNullOrWhiteSpace(questionBody));
 
-            GetQuestionMark();
+            short mark = GetQuestionMark();
             Answer[] answers = GetChoices();
 
             short CorrectAnswer;
@@ -93,7 +93,7 @@ namespace Exam02
             return new MCQ()
             {
                 Body = questionBody,
-                Mark = GetQuestionMark(),
+                Mark = mark,
                 Answers = answers,
                 CorrectAnswer = CorrectAnswer
             };
