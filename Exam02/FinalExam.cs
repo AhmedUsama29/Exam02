@@ -8,5 +8,14 @@ namespace Exam02
 {
     internal class FinalExam : Exam
     {
+
+
+        public override void ShowExam()
+        {
+            Console.WriteLine("Final Exam:");
+            Console.WriteLine($"Time of the Exam: {Time} minutes"); // change to hours and minutes later
+            Console.WriteLine($"Number of Questions: {NumOfQuestions}");
+        }
+
     }
 }
