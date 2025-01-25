@@ -15,7 +15,12 @@
             s01.CreateExam();
             Console.Clear();
 
-            
+            //s01.ExamOfSubject.ShowExam();
+
+            foreach (var Question in s01.ExamOfSubject.Questions)
+            {
+                Console.WriteLine(Question.ToString());
+            }
 
         }
     }
