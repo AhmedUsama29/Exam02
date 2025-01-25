@@ -29,11 +29,11 @@ namespace Exam02
                     Time = examTime,
                     NumOfQuestions = numberOfQuestions
                 };
-                for (int i = 0; i < numberOfQuestions ; i++)
+                for (int i = 0; i < numberOfQuestions; i++)
                 {
                     Console.Clear();
-                    Console.WriteLine($"Question {i+1} : ");
-                    Helper.GetMCQDetails();
+                    Console.WriteLine($"Question {i + 1} : ");
+                    ExamOfSubject.Questions[i] = Helper.GetMCQDetails();
                 }
             }
             else
@@ -47,17 +47,24 @@ namespace Exam02
                 {
                     Console.Clear();
                     Console.WriteLine($"Question {i + 1} : ");
+
                     short QuestionType = Helper.GetQuestionType();
+                    if (QuestionType == 1) // MCQ
+                    {
+                        ExamOfSubject.Questions[i] = Helper.GetMCQDetails();
+                    }
+                    else // True | False
+                    {
+                        ExamOfSubject.Questions[i] = Helper.GetTrueFalseDetails();
 
-                    //QuestionType == 1 ? Helper.GetMCQDetails() : Helper.GetTrueFalseDetails();
-
+                    }
                 }
+
+
+
             }
 
 
-            
         }
-
-
     }
 }

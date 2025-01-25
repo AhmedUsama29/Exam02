@@ -8,6 +8,12 @@ namespace Exam02
 {
     internal abstract class Exam
     {
+        protected Exam(short time, short numOfQuestions)
+        {
+            Time = time;
+            NumOfQuestions = numOfQuestions;
+            Questions = new Question[numOfQuestions];
+        }
 
         public short Time { get; set; }
         public short NumOfQuestions { get; set; }

@@ -132,6 +132,7 @@ namespace Exam02
         }
         #endregion
 
+        #region True Or False
         public static TrueOrFalse GetTrueFalseDetails()
         {
             string QuestionBody;
@@ -163,6 +164,8 @@ namespace Exam02
                 Answers = answers,
                 CorrectAnswer = CorrectAnswer
             };
-        }
+        } 
+        #endregion
+    
     }
 }
