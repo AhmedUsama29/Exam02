@@ -18,7 +18,7 @@ namespace Exam02
         public void CreateExam()
         {
 
-            int examType = Helper.GetExamType();
+            short examType = Helper.GetExamType();
             short examTime = Helper.GetExamTime();
             short numberOfQuestions = Helper.GetNumberOfQuestions();
 
@@ -29,6 +29,14 @@ namespace Exam02
                     Time = examTime,
                     NumOfQuestions = numberOfQuestions
                 };
+                for (int i = 0; i < numberOfQuestions ; i++)
+                {
+                    Console.WriteLine("MCQ Question \nPlease Enter Question Body:");    //Validate Later
+                    string questionBody = Console.ReadLine();
+                    Console.WriteLine("Please Enter the Question Mark:");
+                    short questionMark = Console.Read();
+                    //validate like before
+                }
             }
             else
             {
@@ -38,6 +46,7 @@ namespace Exam02
                     NumOfQuestions = numberOfQuestions
                 };
             }
+
 
             
         }
