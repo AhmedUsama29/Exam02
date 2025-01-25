@@ -8,7 +8,9 @@ namespace Exam02
 {
     internal class FinalExam : Exam
     {
-        
+        public FinalExam(short time, short numOfQuestions) : base(time, numOfQuestions)
+        {
+        }
 
         public override void ShowExam()
         {

@@ -17,10 +17,11 @@
 
             //s01.ExamOfSubject.ShowExam();
 
-            foreach (var Question in s01.ExamOfSubject.Questions)
-            {
-                Console.WriteLine(Question.ToString());
-            }
+            //foreach (Question Question in s01.ExamOfSubject.Questions)
+            //{
+            //    Console.WriteLine(Question);
+            //}
+
 
         }
     }

@@ -8,18 +8,16 @@ namespace Exam02
 {
     internal class TrueOrFalse : Question
     {
-        //change
-        public override string ToString()
+        override public string ToString()
         {
-            var answersString = Answers != null
-                ? string.Join("\n", Answers.Select((a, index) => $"{index + 1}. {a}"))
-                : "No answers available.";
+            string output = $"{Header} Question \t {Mark} Marks \n\n{Body}\n\n";
 
-            return $"Header: {Header}\n" +
-                   $"Body: {Body}\n" +
-                   $"Mark: {Mark}\n" +
-                   $"Answers:\n{answersString}\n" +
-                   $"Correct Answer: {CorrectAnswer}";
+            for (int i = 0; i < 2; i++)
+            {
+                output += $"{Answers[i].ToString()}\n";
+            }
+
+            return output;
         }
 
     }

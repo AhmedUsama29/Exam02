@@ -70,6 +70,7 @@ namespace Exam02
 
             return new MCQ()
             {
+                Header = "MCQ",
                 Body = QuestionBody,
                 Mark = mark,
                 Answers = answers,
@@ -159,6 +160,7 @@ namespace Exam02
 
             return new TrueOrFalse()
             {
+                Header = "True or False",
                 Body = QuestionBody,
                 Mark = mark,
                 Answers = answers,

@@ -12,5 +12,10 @@ namespace Exam02
         public int AnswerID { get; set; }
         public string AnswerText { get; set; }
 
+        override public string ToString()
+        {
+            return $"{AnswerID}){AnswerText}";
+        }
+
     }
 }
