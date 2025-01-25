@@ -13,7 +13,8 @@ namespace Exam02
         public override void ShowExam()
         {
             Console.WriteLine("Final Exam:");
-            base.ShowExam();
+            Console.WriteLine($"Time of the Exam: {Time} minutes"); // change to hours and minutes later
+            Console.WriteLine($"Number of Questions: {NumOfQuestions}");
         }
 
     }
