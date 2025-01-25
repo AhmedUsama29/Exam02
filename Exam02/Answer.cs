@@ -8,6 +8,11 @@ namespace Exam02
 {
     internal class Answer //: IComparable
     {
+        public Answer(int answerID, string answerText)
+        {
+            AnswerID = answerID;
+            AnswerText = answerText;
+        }
 
         public int AnswerID { get; set; }
         public string AnswerText { get; set; }

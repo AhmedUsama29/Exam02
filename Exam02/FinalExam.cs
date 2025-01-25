@@ -12,17 +12,30 @@ namespace Exam02
         {
         }
 
-        public override void ShowExam()
+        //public override void StartExam() { 
+        
+
+        
+        //}
+
+        public override void ShowExam(Answer[] UserAnswers, TimeSpan elapsedTime)
         {
             Console.WriteLine("Final Exam:");
             Console.WriteLine($"Time of the Exam: {Time} minutes");
             Console.WriteLine($"Number of Questions: {NumOfQuestions}\n");
+            int counter = 0;
 
             foreach (Question question in Questions)
             {
                 Console.WriteLine(question);
+                Console.WriteLine($"The Right Answer ===> {question.CorrectAnswer}");
+                Console.WriteLine($"Your Answer ===> {UserAnswers[counter].AnswerText}");
+                
+                double UserMark = Helper.GetMark(question, UserAnswers[counter++]);
 
+                Console.WriteLine($"Your Grade is {UserMark} from {question.Mark}");
             }
+            Console.WriteLine($"Time : {elapsedTime}\nThank You");
         }
 
 
