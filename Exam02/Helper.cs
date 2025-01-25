@@ -93,11 +93,7 @@ namespace Exam02
                     choice = Console.ReadLine();
                 } while (string.IsNullOrWhiteSpace(choice));
 
-                answers[i] = new Answer()
-                {
-                    AnswerID = (short)i + 1,
-                    AnswerText = choice
-                };
+                answers[i] = new Answer(i + 1, choice);
 
             }
 
@@ -148,8 +144,8 @@ namespace Exam02
             short mark = GetQuestionMark();
             Answer[] answers =
             {
-                new Answer() { AnswerID = 1, AnswerText = "True" },
-                new Answer() { AnswerID = 2, AnswerText = "False" }
+                new Answer(1,"True"),
+                new Answer(2,"False")
             };
 
             short CorrectAnswer;
@@ -201,7 +197,7 @@ namespace Exam02
 
         public static double GetMark(Question question, Answer answer) {
 
-            if ( answer.AnswerText == question.CorrectAnswer)
+            if ( answer.AnswerID == question.CorrectAnswer)
             {
                 return question.Mark;
             }
