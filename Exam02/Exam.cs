@@ -11,7 +11,6 @@ namespace Exam02
 
         public short Time { get; set; }
         public short NumOfQuestions { get; set; }
-        //public Subject ExamSubject { get; set; }
 
         public abstract void ShowExam();
 
