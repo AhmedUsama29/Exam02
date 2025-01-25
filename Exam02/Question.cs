@@ -19,7 +19,7 @@ namespace Exam02
 
         public short CorrectAnswer { get; set; } //still
 
-
+        
 
     }
 }

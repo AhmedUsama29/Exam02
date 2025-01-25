@@ -8,6 +8,9 @@ namespace Exam02
 {
     internal class PracticalExam : Exam
     {
+        public PracticalExam(short time, short numOfQuestions) : base(time, numOfQuestions)
+        {
+        }
 
         public override void ShowExam()
         {

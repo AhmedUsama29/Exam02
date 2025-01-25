@@ -24,11 +24,7 @@ namespace Exam02
 
             if (examType == 1)
             {
-                ExamOfSubject = new PracticalExam()
-                {
-                    Time = examTime,
-                    NumOfQuestions = numberOfQuestions
-                };
+                ExamOfSubject = new PracticalExam(examTime, numberOfQuestions);
                 for (int i = 0; i < numberOfQuestions; i++)
                 {
                     Console.Clear();
@@ -38,11 +34,7 @@ namespace Exam02
             }
             else
             {
-                ExamOfSubject = new FinalExam()
-                {
-                    Time = examTime,
-                    NumOfQuestions = numberOfQuestions
-                };
+                ExamOfSubject = new FinalExam(examTime, numberOfQuestions);
                 for (int i = 0; i < numberOfQuestions; i++)
                 {
                     Console.Clear();

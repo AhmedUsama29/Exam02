@@ -8,7 +8,7 @@ namespace Exam02
 {
     internal abstract class Exam
     {
-        protected Exam(short time, short numOfQuestions)
+        public Exam(short time, short numOfQuestions)
         {
             Time = time;
             NumOfQuestions = numOfQuestions;
