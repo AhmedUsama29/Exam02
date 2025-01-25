@@ -43,7 +43,15 @@ namespace Exam02
                     Time = examTime,
                     NumOfQuestions = numberOfQuestions
                 };
-                //Choose MCQ or T | F and make questions
+                for (int i = 0; i < numberOfQuestions; i++)
+                {
+                    Console.Clear();
+                    Console.WriteLine($"Question {i + 1} : ");
+                    short QuestionType = Helper.GetQuestionType();
+
+                    //QuestionType == 1 ? Helper.GetMCQDetails() : Helper.GetTrueFalseDetails();
+
+                }
             }
 
 

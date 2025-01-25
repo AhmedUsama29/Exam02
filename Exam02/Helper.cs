@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Exam02
 {
-    internal static class Helper
+    internal static class Helper    //For validation and getting user input
     {
+        #region Exam
         public static short GetExamType()
         {
             short ExamType;
@@ -42,21 +43,67 @@ namespace Exam02
                 flag = short.TryParse(Console.ReadLine(), out NumberOfQuestions);
             } while (!flag || NumberOfQuestions <= 0);
             return NumberOfQuestions;
-        }
+        } 
+        #endregion
 
-        public static string GetQuestionType()
+        #region MCQ
+
+        public static MCQ GetMCQDetails()
         {
-            int QuestionType;
+            string QuestionBody;
+            do
+            {
+                Console.WriteLine("MCQ Question \nPlease Enter Question Body:");
+                QuestionBody = Console.ReadLine();
+            } while (string.IsNullOrWhiteSpace(QuestionBody));
+
+            short mark = GetQuestionMark();
+            Answer[] answers = GetMCQChoices();
+
+            short CorrectAnswer;
             bool flag;
             do
             {
-                Console.WriteLine("Please Enter Type of Question (1 for MCQ | 2 for True or False):");
-                flag = int.TryParse(Console.ReadLine(), out QuestionType);
-            } while (!flag || (QuestionType != 1 && QuestionType != 2));
+                Console.WriteLine("Please Enter the Correct Answer ID:");
+                flag = short.TryParse(Console.ReadLine(), out CorrectAnswer);
+            } while (!flag || CorrectAnswer <= 0 || CorrectAnswer > 3);
 
-            return QuestionType == 1 ? "MCQ" : "True | False";
+            return new MCQ()
+            {
+                Body = QuestionBody,
+                Mark = mark,
+                Answers = answers,
+                CorrectAnswer = CorrectAnswer
+            };
         }
 
+        public static Answer[] GetMCQChoices()
+        {
+            string choice;
+            Answer[] answers = new Answer[3];
+
+            for (int i = 0; i < 3; i++)
+            {
+                do
+                {
+                    Console.WriteLine($"Please Enter Choice Number {i + 1}:");
+                    choice = Console.ReadLine();
+                } while (string.IsNullOrWhiteSpace(choice));
+
+                answers[i] = new Answer()
+                {
+                    AnswerID = (short)i + 1,
+                    AnswerText = choice
+                };
+
+            }
+
+            return answers;
+
+        }
+        #endregion
+
+        #region Question
         public static short GetQuestionMark()
         {
             short QuestionMark;
@@ -70,59 +117,52 @@ namespace Exam02
             return QuestionMark;
         }
 
-        public static MCQ GetMCQDetails()
+
+        public static short GetQuestionType()
         {
-            string questionBody;
+            short QuestionType;
+            bool flag;
             do
             {
-                Console.WriteLine("MCQ Question \nPlease Enter Question Body:");
-                questionBody = Console.ReadLine();
-            } while (string.IsNullOrWhiteSpace(questionBody));
+                Console.WriteLine("Please Enter Type of Question (1 for MCQ | 2 for True or False):");
+                flag = short.TryParse(Console.ReadLine(), out QuestionType);
+            } while (!flag || (QuestionType != 1 && QuestionType != 2));
+
+            return QuestionType; //1 for MCQ, 2 for True or False
+        }
+        #endregion
+
+        public static TrueOrFalse GetTrueFalseDetails()
+        {
+            string QuestionBody;
+            do
+            {
+                Console.WriteLine("True or False Question \nPlease Enter Question Body:");
+                QuestionBody = Console.ReadLine();
+            } while (string.IsNullOrWhiteSpace(QuestionBody));
 
             short mark = GetQuestionMark();
-            Answer[] answers = GetChoices();
+            Answer[] answers =
+            {
+                new Answer() { AnswerID = 1, AnswerText = "True" },
+                new Answer() { AnswerID = 2, AnswerText = "False" }
+            };
 
             short CorrectAnswer;
             bool flag;
             do
             {
-                Console.WriteLine("Please Enter the Correct Answer ID:");
+                Console.WriteLine("Please Enter the Correct Answer ID: (1 for True | 2 for False)");
                 flag = short.TryParse(Console.ReadLine(), out CorrectAnswer);
-            } while (!flag || CorrectAnswer <= 0 || CorrectAnswer > 3);
+            } while (!flag || CorrectAnswer <= 0 || CorrectAnswer > 2);
 
-            return new MCQ()
+            return new TrueOrFalse()
             {
-                Body = questionBody,
+                Body = QuestionBody,
                 Mark = mark,
                 Answers = answers,
                 CorrectAnswer = CorrectAnswer
             };
         }
-
-        public static Answer[] GetChoices()
-        {
-            string choice;
-            Answer[] answers = new Answer[3];
-
-            for (int i = 0; i < 3; i++)
-            {
-                do
-                {
-                    Console.WriteLine($"Please Enter Choice Number {i+1}:");
-                    choice = Console.ReadLine();
-                } while (string.IsNullOrWhiteSpace(choice));
-
-                answers[i] = new Answer()
-                {
-                    AnswerID = (short)i+1,
-                    AnswerText = choice
-                };
-
-            }
-
-            return answers;
-
-        }
-
     }
 }
