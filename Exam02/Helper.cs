@@ -171,7 +171,7 @@ namespace Exam02
         }
         #endregion
 
-        public static short GetAnswerIdForMCQ() {
+        public static short GetAnswerForMCQ() {
 
             short AnswerID;
             bool flag;
@@ -179,9 +179,33 @@ namespace Exam02
                 Console.WriteLine("Please Enter The Answer ID:");
                 flag = short.TryParse(Console.ReadLine(), out AnswerID);
 
-            }while (!flag || AnswerID <= 0 || AnswerID > 3);
+            }while (!flag || AnswerID <= 0 || AnswerID > 3); //3
 
             return AnswerID;
+        }
+
+        public static short GetAnswerForTrueOrFalse()
+        {
+
+            short AnswerID;
+            bool flag;
+            do
+            {
+                Console.WriteLine("Please Enter The Answer ID:");
+                flag = short.TryParse(Console.ReadLine(), out AnswerID);
+
+            } while (!flag || AnswerID <= 0 || AnswerID > 2); //2
+
+            return AnswerID;
+        }
+
+        public static double GetMark(Question question, Answer answer) {
+
+            if ( answer.AnswerText == question.CorrectAnswer)
+            {
+                return question.Mark;
+            }
+            return 0;
         }
 
     }

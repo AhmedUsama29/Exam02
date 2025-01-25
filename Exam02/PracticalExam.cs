@@ -12,7 +12,13 @@ namespace Exam02
         {
         }
 
-        public override void ShowExam()
+        //public override void StartExam()
+        //{
+
+
+        //}
+
+        public override void ShowExam(Answer[] UserAnswers, TimeSpan elapsedTime) // not used yet
         {
             Console.WriteLine("Practical Exam: ");
             Console.WriteLine($"Time of the Exam: {Time} minutes"); // change to hours and minutes later
@@ -22,6 +28,7 @@ namespace Exam02
             {
                 Console.WriteLine($"The Right Answer for Q{i+1} ===> {Questions[i].CorrectAnswer}");
             }
+            Console.WriteLine($"Time : {elapsedTime}\nThank You");
         }
     }
 }
