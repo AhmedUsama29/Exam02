@@ -80,8 +80,23 @@ namespace Exam02
             } while (string.IsNullOrWhiteSpace(questionBody));
 
             GetQuestionMark();
+            Answer[] answers = GetChoices();
 
-            
+            short CorrectAnswer;
+            bool flag;
+            do
+            {
+                Console.WriteLine("Please Enter the Correct Answer ID:");
+                flag = short.TryParse(Console.ReadLine(), out CorrectAnswer);
+            } while (!flag || CorrectAnswer <= 0 || CorrectAnswer > 3);
+
+            return new MCQ()
+            {
+                Body = questionBody,
+                Mark = GetQuestionMark(),
+                Answers = answers,
+                CorrectAnswer = CorrectAnswer
+            };
         }
 
         public static Answer[] GetChoices()
@@ -99,7 +114,7 @@ namespace Exam02
 
                 answers[i] = new Answer()
                 {
-                    AnswerID = i+1,
+                    AnswerID = (short)i+1,
                     AnswerText = choice
                 };
 

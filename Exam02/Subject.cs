@@ -31,11 +31,7 @@ namespace Exam02
                 };
                 for (int i = 0; i < numberOfQuestions ; i++)
                 {
-                    Console.WriteLine("MCQ Question \nPlease Enter Question Body:");    //Validate Later
-                    string questionBody = Console.ReadLine();
-                    Console.WriteLine("Please Enter the Question Mark:");
-                    short questionMark = Console.Read();
-                    //validate like before
+                    Helper.GetMCQDetails();
                 }
             }
             else
@@ -45,6 +41,7 @@ namespace Exam02
                     Time = examTime,
                     NumOfQuestions = numberOfQuestions
                 };
+                //Choose MCQ or T | F and make questions
             }
 
 
