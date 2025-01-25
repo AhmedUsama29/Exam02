@@ -18,9 +18,9 @@ namespace Exam02
             Console.WriteLine($"Time of the Exam: {Time} minutes"); // change to hours and minutes later
             Console.WriteLine($"Number of Questions: {NumOfQuestions}\n");
 
-            foreach (Question question in Questions)
+            for (int i = 0; i < NumOfQuestions; i++)
             {
-                Console.WriteLine(question);
+                Console.WriteLine($"The Right Answer for Q{i+1} ===> {Questions[i].CorrectAnswer}");
             }
         }
     }

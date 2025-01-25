@@ -171,11 +171,17 @@ namespace Exam02
         }
         #endregion
 
-        public static short GetAnswerID() {
+        public static short GetAnswerIdForMCQ() {
 
-         Console.WriteLine("Please Enter The Answer ID:");
-            //continue
+            short AnswerID;
+            bool flag;
+            do {
+                Console.WriteLine("Please Enter The Answer ID:");
+                flag = short.TryParse(Console.ReadLine(), out AnswerID);
 
+            }while (!flag || AnswerID <= 0 || AnswerID > 3);
+
+            return AnswerID;
         }
 
     }
