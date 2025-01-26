@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exam02
 {
-    internal class Answer //: IComparable // didn't need because i used Hepler.GetMark()
+    internal class Answer
     {
         public Answer(int answerID, string answerText)
         {

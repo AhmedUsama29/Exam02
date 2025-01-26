@@ -29,7 +29,7 @@ namespace Exam02
                 {
                     Console.Clear();
                     Console.WriteLine($"Question {i + 1} : ");
-                    ExamOfSubject.Questions[i] = Helper.GetMCQDetails();
+                    ExamOfSubject.Questions[i] = Helper.CreateMcqQuestion();
                 }
             }
             else
@@ -44,11 +44,11 @@ namespace Exam02
                     Console.Clear();
                     if (QuestionType == 1) // MCQ
                     {
-                        ExamOfSubject.Questions[i] = Helper.GetMCQDetails();
+                        ExamOfSubject.Questions[i] = Helper.CreateMcqQuestion();
                     }
                     else // True | False
                     {
-                        ExamOfSubject.Questions[i] = Helper.GetTrueFalseDetails();
+                        ExamOfSubject.Questions[i] = Helper.CreateTrueOrFalseQuestion();
 
                     }
                 }
