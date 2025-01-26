@@ -32,15 +32,11 @@ namespace Exam02
                 if (UserAnswers[counter] is not null)
                 {
                     Console.WriteLine($"Your Answer ===> {UserAnswers[counter].AnswerText}");
-
                     UserGrade += Helper.GetMark(question, UserAnswers[counter++]);
-
-                    //Console.WriteLine($"Your Grade is {UserMark} from {question.Mark}");
                 }
                 else
                 {
                     Console.WriteLine($"Your Answer ===> You didn't Answer this Question");
-                    //Console.WriteLine($"Your Grade is 0 from {question.Mark}");
                 }
                 TotalGrade += question.Mark;
                 Console.WriteLine("\n============================================\n");
