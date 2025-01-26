@@ -17,7 +17,7 @@ namespace Exam02
         {
 
                 Console.Clear(); 
-                Console.WriteLine("\n============================================================================================\n"); // Because Console.Clear() Doesn't work correctly
+                Console.WriteLine("\n=======================================Start Of The Exam Result=====================================================\n"); // Because Console.Clear() Doesn't work correctly
                 Console.WriteLine("Final Exam:");
                 Console.WriteLine($"Time of the Exam: {Time} minutes");
                 Console.WriteLine($"Number of Questions: {NumOfQuestions}\n");

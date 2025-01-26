@@ -20,6 +20,24 @@ namespace Exam02
 
             return output;
         }
+        //Deep Copy if needed
+        public override object Clone()
+        {
+            Answer[] TempAnswers = new Answer[this.Answers.Length];
+            for (int i = 0; i < this.Answers.Length; i++)
+            {
+                Answer a = this.Answers[i];
+                TempAnswers[i] = new Answer(a.AnswerID, a.AnswerText);
+            }
 
+            return new MCQ
+            {
+                Header = this.Header,
+                Body = this.Body,
+                Mark = this.Mark,
+                Answers = TempAnswers,
+                CorrectAnswer = this.CorrectAnswer
+            };
+        }   
     }
 }

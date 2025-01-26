@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exam02
 {
-    internal abstract class Question
+    internal abstract class Question : ICloneable         //Deep Copy if needed
     {
 
         public string Header { get; set; }
@@ -19,7 +19,8 @@ namespace Exam02
 
         public short CorrectAnswer { get; set; }
 
+        public abstract object Clone();
+           
         
-
     }
 }
