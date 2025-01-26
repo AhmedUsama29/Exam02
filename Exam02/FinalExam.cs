@@ -16,8 +16,7 @@ namespace Exam02
         public override void ShowExam(Answer[] UserAnswers, TimeSpan elapsedTime)
         {
 
-                Console.Clear();
-                
+                Console.Clear(); 
                 Console.WriteLine("Final Exam:");
                 Console.WriteLine($"Time of the Exam: {Time} minutes");
                 Console.WriteLine($"Number of Questions: {NumOfQuestions}\n");

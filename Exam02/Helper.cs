@@ -221,7 +221,6 @@ namespace Exam02
 
             if (StartChoice == 'Y')
             {
-                
                 return true;
             }
             else
