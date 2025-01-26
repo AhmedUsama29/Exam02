@@ -48,7 +48,7 @@ namespace Exam02
 
         #region MCQ
 
-        public static MCQ GetMCQDetails()
+        public static MCQ CreateMcqQuestion()
         {
             string QuestionBody;
             do
@@ -57,8 +57,8 @@ namespace Exam02
                 QuestionBody = Console.ReadLine();
             } while (string.IsNullOrWhiteSpace(QuestionBody));
 
-            short mark = GetQuestionMark();
-            Answer[] answers = GetMCQChoices();
+            double mark = GetQuestionMark();
+            Answer[] answers = CreteMcqChoices();
 
             short CorrectAnswer;
             bool flag;
@@ -78,7 +78,7 @@ namespace Exam02
             };
         }
 
-        public static Answer[] GetMCQChoices()
+        public static Answer[] CreteMcqChoices()
         {
             string choice;
             Answer[] answers = new Answer[3];
@@ -103,14 +103,14 @@ namespace Exam02
         #endregion
 
         #region Question
-        public static short GetQuestionMark()
+        public static double GetQuestionMark()
         {
-            short QuestionMark;
+            double QuestionMark;
             bool flag;
             do
             {
                 Console.WriteLine("Please Enter the Question Mark:");
-                flag = short.TryParse(Console.ReadLine(), out QuestionMark);
+                flag = Double.TryParse(Console.ReadLine(), out QuestionMark);
             } while (!flag || QuestionMark <= 0);
 
             return QuestionMark;
@@ -132,7 +132,7 @@ namespace Exam02
         #endregion
 
         #region True Or False
-        public static TrueOrFalse GetTrueFalseDetails()
+        public static TrueOrFalse CreateTrueOrFalseQuestion()
         {
             string QuestionBody;
             do
@@ -141,7 +141,7 @@ namespace Exam02
                 QuestionBody = Console.ReadLine();
             } while (string.IsNullOrWhiteSpace(QuestionBody));
 
-            short mark = GetQuestionMark();
+            double mark = GetQuestionMark();
             Answer[] answers =
             {
                 new Answer(1,"True"),

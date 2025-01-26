@@ -12,7 +12,7 @@ namespace Exam02
         {
         }
 
-        public override void ShowExam(Answer[] UserAnswers, TimeSpan elapsedTime) // not used yet
+        public override void ShowExam(Answer[] UserAnswers, TimeSpan elapsedTime)
         {
             Console.Clear();
             Console.WriteLine("Practical Exam: ");

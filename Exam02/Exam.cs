@@ -16,14 +16,14 @@ namespace Exam02
 
         public Question[] Questions { get; set; }
 
-        private Stopwatch examStopwatch;
+        private Stopwatch ExamTimer;
 
         public Exam(short time, short numOfQuestions)
         {
             Time = time;
             NumOfQuestions = numOfQuestions;
             Questions = new Question[numOfQuestions];
-            examStopwatch = new Stopwatch();
+            ExamTimer = new Stopwatch();
         }
 
         public void StartExam() 
@@ -35,12 +35,12 @@ namespace Exam02
             Answer[] UserAnswers = new Answer[NumOfQuestions];
             short counter = 0;
 
-            examStopwatch.Start();
+            ExamTimer.Start();
             foreach (Question question in Questions)
             {
 
                 // check if the exam time is done
-                if (examStopwatch.Elapsed.TotalMinutes >= (double)Time)
+                if (ExamTimer.Elapsed.TotalMinutes >= (double)Time)
                 {
                     Console.WriteLine("\nTime's up! The exam will now end.\n");
                     break;
@@ -53,8 +53,8 @@ namespace Exam02
                 Console.WriteLine("\n============================================\n");
             }
 
-            examStopwatch.Stop();
-            ShowExam(UserAnswers, examStopwatch.Elapsed);
+            ExamTimer.Stop();
+            ShowExam(UserAnswers, ExamTimer.Elapsed);
         }
 
         public abstract void ShowExam(Answer[] userAnswers, TimeSpan elapsedTime);

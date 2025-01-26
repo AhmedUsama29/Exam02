@@ -15,9 +15,9 @@ namespace Exam02
 
         public double Mark { get; set; }
 
-        public Answer[] Answers { get; set; }  //still
+        public Answer[] Answers { get; set; }
 
-        public short CorrectAnswer { get; set; } //still
+        public short CorrectAnswer { get; set; }
 
         
 
