@@ -14,6 +14,7 @@ namespace Exam02
 
         public override void ShowExam(Answer[] UserAnswers, TimeSpan elapsedTime) // not used yet
         {
+            Console.Clear();
             Console.WriteLine("Practical Exam: ");
             Console.WriteLine($"Time of the Exam: {Time} minutes"); // change to hours and minutes later
             Console.WriteLine($"Number of Questions: {NumOfQuestions}\n");
