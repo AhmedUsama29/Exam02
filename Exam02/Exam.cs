@@ -26,10 +26,8 @@ namespace Exam02
             examStopwatch = new Stopwatch();
         }
 
-        public void StartExam() {
-
-            
-
+        public void StartExam() 
+        {
             Console.WriteLine("Final Exam:");
             Console.WriteLine($"Time of the Exam: {Time} minutes");
             Console.WriteLine($"Number of Questions: {NumOfQuestions}\n");
@@ -42,10 +40,6 @@ namespace Exam02
             {
                 Console.WriteLine(question);
                 short AnswerId = question is MCQ ? Helper.GetAnswerForMCQ() : Helper.GetAnswerForTrueOrFalse();
-
-                //UserAnswers[counter].AnswerID = AnswerId;
-                //UserAnswers[counter++].AnswerText = question.Answers[AnswerId].AnswerText;
-
                 UserAnswers[counter++] = new Answer(AnswerId, question.Answers[AnswerId-1].AnswerText); 
             }
             Console.Clear();

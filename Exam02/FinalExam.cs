@@ -23,7 +23,7 @@ namespace Exam02
             foreach (Question question in Questions)
             {
                 Console.WriteLine(question);
-                Console.WriteLine($"The Right Answer ===> {question.Answers[question.CorrectAnswer - 1].AnswerText}"); //question.CorrectAnswer
+                Console.WriteLine($"The Right Answer ===> {question.Answers[question.CorrectAnswer - 1].AnswerText}");
                 Console.WriteLine($"Your Answer ===> {UserAnswers[counter].AnswerText}");
                 
                 double UserMark = Helper.GetMark(question, UserAnswers[counter++]);

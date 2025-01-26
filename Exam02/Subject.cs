@@ -54,7 +54,11 @@ namespace Exam02
                 }
 
             }
-            Console.WriteLine("Do you want to start the exam ? (Y|N)");
+            if (Helper.WillStartExam())
+                ExamOfSubject.StartExam();
+            else
+                Console.WriteLine("Exam Creation Done\nBack to the main...");
+                //See what you will do
         }
     }
 }

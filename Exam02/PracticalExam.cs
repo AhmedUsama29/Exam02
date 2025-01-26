@@ -20,8 +20,9 @@ namespace Exam02
 
             for (int i = 0; i < NumOfQuestions; i++)
             {
-                Console.WriteLine($"The Right Answer for Q{i+1} ===> {Questions[i].CorrectAnswer}");
+                Console.WriteLine($"The Right Answer for Q{i+1} ===> {Questions[i].Answers[Questions[i].CorrectAnswer - 1].AnswerText}");
             }
+            Console.WriteLine("\n============================================\n");
             Console.WriteLine($"Time : {elapsedTime}\nThank You");
         }
     }
