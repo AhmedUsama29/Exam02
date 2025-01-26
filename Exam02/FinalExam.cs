@@ -21,11 +21,11 @@ namespace Exam02
                 Console.WriteLine($"Time of the Exam: {Time} minutes");
                 Console.WriteLine($"Number of Questions: {NumOfQuestions}\n");
                 int counter = 0;
-            
-                foreach (Question question in Questions)
-                {
-                
+                double UserGrade = 0;
+                double TotalGrade = 0;
 
+            foreach (Question question in Questions)
+            {
                     Console.WriteLine(question);
                     Console.WriteLine($"The Right Answer ===> {question.Answers[question.CorrectAnswer - 1].AnswerText}");
 
@@ -33,19 +33,20 @@ namespace Exam02
                 {
                     Console.WriteLine($"Your Answer ===> {UserAnswers[counter].AnswerText}");
 
-                    double UserMark = Helper.GetMark(question, UserAnswers[counter++]);
+                    UserGrade += Helper.GetMark(question, UserAnswers[counter++]);
 
-                    Console.WriteLine($"Your Grade is {UserMark} from {question.Mark}");
+                    //Console.WriteLine($"Your Grade is {UserMark} from {question.Mark}");
                 }
                 else
                 {
                     Console.WriteLine($"Your Answer ===> You didn't Answer this Question");
-                    Console.WriteLine($"Your Grade is 0 from {question.Mark}");
+                    //Console.WriteLine($"Your Grade is 0 from {question.Mark}");
                 }
+                TotalGrade += question.Mark;
                 Console.WriteLine("\n============================================\n");
-                        
-                }
-                Console.WriteLine($"Time : {elapsedTime}\nThank You");
+             }
+            Console.WriteLine($"Your Grade is {UserGrade} from {TotalGrade}");
+            Console.WriteLine($"Time : {elapsedTime}\nThank You");
 
         }
 
