@@ -16,7 +16,7 @@ namespace Exam02
         {
             Console.Clear();
             Console.WriteLine("Practical Exam: ");
-            Console.WriteLine($"Time of the Exam: {Time} minutes"); // change to hours and minutes later
+            Console.WriteLine($"Time of the Exam: {Time} minutes");
             Console.WriteLine($"Number of Questions: {NumOfQuestions}\n");
 
             for (int i = 0; i < NumOfQuestions; i++)
