@@ -15,7 +15,7 @@
             s01.CreateExam();
             Console.Clear();
 
-            s01.ExamOfSubject.StartExam();
+            //s01.ExamOfSubject.StartExam();
 
 
         }

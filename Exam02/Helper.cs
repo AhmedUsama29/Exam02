@@ -8,7 +8,7 @@ namespace Exam02
 {
     internal static class Helper    //For validation and getting user input
     {
-        #region Exam
+        #region Creation of Exam
         public static short GetExamType()
         {
             short ExamType;
@@ -167,15 +167,18 @@ namespace Exam02
         }
         #endregion
 
-        public static short GetAnswerForMCQ() {
+        #region Show Exam
+        public static short GetAnswerForMCQ()
+        {
 
             short AnswerID;
             bool flag;
-            do {
+            do
+            {
                 Console.WriteLine("Please Enter The Answer ID:");
                 flag = short.TryParse(Console.ReadLine(), out AnswerID);
 
-            }while (!flag || AnswerID <= 0 || AnswerID > 3); //3
+            } while (!flag || AnswerID <= 0 || AnswerID > 3); //3
 
             return AnswerID;
         }
@@ -195,14 +198,36 @@ namespace Exam02
             return AnswerID;
         }
 
-        public static double GetMark(Question question, Answer answer) {
+        public static double GetMark(Question question, Answer answer)
+        {
 
-            if ( answer.AnswerID == question.CorrectAnswer)
+            if (answer.AnswerID == question.CorrectAnswer)
             {
                 return question.Mark;
             }
             return 0;
         }
+        #endregion
 
+        public static bool WillStartExam() 
+        {
+
+            Console.WriteLine("Do you want to start the exam? (Y|N)");
+            char StartChoice;
+            do
+            {
+                StartChoice = char.ToUpper(Console.ReadKey().KeyChar);
+            } while (StartChoice != 'Y' && StartChoice != 'N');
+
+            if (StartChoice == 'Y')
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }
