@@ -28,7 +28,7 @@ namespace Exam02
 
         public void StartExam() 
         {
-            Console.WriteLine("Final Exam:");
+            Console.Clear();
             Console.WriteLine($"Time of the Exam: {Time} minutes");
             Console.WriteLine($"Number of Questions: {NumOfQuestions}\n");
 
@@ -38,11 +38,21 @@ namespace Exam02
             examStopwatch.Start();
             foreach (Question question in Questions)
             {
+
+                // check if the exam time is done
+                if (examStopwatch.Elapsed.TotalMinutes >= (double)Time)
+                {
+                    Console.WriteLine("\nTime's up! The exam will now end.\n");
+                    break;
+                }
+
+
                 Console.WriteLine(question);
                 short AnswerId = question is MCQ ? Helper.GetAnswerForMCQ() : Helper.GetAnswerForTrueOrFalse();
-                UserAnswers[counter++] = new Answer(AnswerId, question.Answers[AnswerId-1].AnswerText); 
+                UserAnswers[counter++] = new Answer(AnswerId, question.Answers[AnswerId-1].AnswerText);
+                Console.WriteLine("\n============================================\n");
             }
-            Console.Clear();
+
             examStopwatch.Stop();
             ShowExam(UserAnswers, examStopwatch.Elapsed);
         }
