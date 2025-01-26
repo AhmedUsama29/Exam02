@@ -46,7 +46,7 @@ namespace Exam02
                 //UserAnswers[counter].AnswerID = AnswerId;
                 //UserAnswers[counter++].AnswerText = question.Answers[AnswerId].AnswerText;
 
-                UserAnswers[counter] = new Answer(AnswerId, question.Answers[AnswerId].AnswerText);
+                UserAnswers[counter++] = new Answer(AnswerId, question.Answers[AnswerId-1].AnswerText); 
             }
             Console.Clear();
             examStopwatch.Stop();
